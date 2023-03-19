@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "wasm": "wasm-pack build rs --target web -d ../pkg",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"

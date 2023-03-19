@@ -1,0 +1,1 @@
+/home/yurika/rs/fem/delauney-triangulation/rs/target/wasm32-unknown-unknown/release/wasm.wasm: /home/yurika/rs/fem/delauney-triangulation/rs/src/lib.rs /home/yurika/rs/fem/delauney-triangulation/rs/src/renderer.rs /home/yurika/rs/fem/delauney-triangulation/rs/src/shaders/shader.frag /home/yurika/rs/fem/delauney-triangulation/rs/src/shaders/shader.vert

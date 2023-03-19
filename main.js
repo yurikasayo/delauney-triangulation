@@ -1,24 +1,25 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import './style.css';
+import init, { App } from './pkg/wasm';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+window.onload = _ => {
+    init().then(_ => {
+        let canvas = document.getElementById('webgl');
+        let app = App.new(window, canvas);
 
-setupCounter(document.querySelector('#counter'))
+        // canvas.addEventListener('mousedown', (e) => {
+        //     app.mouse_down(e.x, e.y);
+        // })
+
+        // canvas.addEventListener('mousemove', (e) => {
+        //     app.mouse_move(e.x, e.y);
+        // })
+
+        // canvas.addEventListener('mouseup', (e) => {
+        //     app.mouse_up(e.x, e.y);
+        // })
+
+        // window.addEventListener('resize', _ => app.resize)
+
+        app.render();
+    });
+}
